@@ -1,6 +1,7 @@
 package net.DarkestDragon.eternal_enforcers;
 
 import com.mojang.logging.LogUtils;
+import net.DarkestDragon.eternal_enforcers.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,7 +17,7 @@ public class Eternal_Enforcers {
     private static final Logger LOGGER = LogUtils.getLogger();
     public Eternal_Enforcers() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        ModItems.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
